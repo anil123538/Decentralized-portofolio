@@ -1,0 +1,164 @@
+.project-section {
+    color: white;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.project-section .title {
+    font-size: 28px;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    width: fit-content;
+}
+
+/* =========small card========== */
+.project-card {
+    height: 320px; /* Reduced height */
+    width: 240px; /* Reduced width */
+    background-color: var(--color-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Ensures even spacing between elements */
+    border-radius: 10px;
+    padding: 12px; /* Inner spacing */
+    transition: 400ms;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.project-card:hover {
+    transform: scale(1.06);
+    color: white;
+}
+
+.project-card .card-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.project-card .card-img img {
+    border-radius: 8px;
+    width: 100%; /* Makes the image responsive */
+    max-width: 200px; /* Limits image width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.card-wrapper a {
+    text-decoration: none;
+    color: white;
+}
+
+.project-section .card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Ensures text is aligned in same level */
+    text-align: center;
+    gap: 6px; /* Adds spacing between text elements */
+}
+
+.project-section .card-text h3 {
+    font-weight: 800;
+    font-size: 16px; /* Smaller font size */
+    margin: 0;
+}
+
+.project-section .card-text p {
+    font-weight: 300;
+    font-size: 14px; /* Smaller font size */
+    opacity: 0.8;
+    margin: 0 8px;
+    line-height: 1.4; /* Improves readability */
+}
+
+.project-section .card-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Ensures cards align properly in rows */
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px; /* Adjusted gap for smaller cards */
+}
+
+.project-section .donate {
+    cursor: pointer;
+    font-size: 14px; /* Smaller font size */
+    font-weight: 600;
+    padding: 6px 18px; /* Reduced padding */
+    border-radius: 16px;
+    border: 1px solid var(--color-blue);
+    opacity: 0.9;
+}
+
+.donate:hover {
+    background-color: var(--color-blue);
+}
+
+.project-section .icon {
+    width: 16px; /* Smaller icons */
+    height: 16px;
+    margin-left: 6px;
+}
+
+/* =========media queries========== */
+@media screen and (max-width: 768px) {
+    .project-section {
+        padding-top: 40px;
+        height: auto; /* Adjusts height dynamically */
+    }
+
+    .project-section .card-wrapper {
+        flex-direction: column; /* Cards stack vertically */
+        gap: 20px;
+    }
+
+    .project-card {
+        height: auto; /* Flexible height for smaller screens */
+        width: 90%; /* Ensures card fits within screen width */
+        padding: 10px;
+    }
+
+    .project-card .card-img img {
+        max-width: 100%; /* Ensures the image is responsive */
+    }
+
+    .project-section .card-text h3 {
+        font-size: 14px;
+    }
+
+    .project-section .card-text p {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .project-section {
+        padding-top: 40px;
+        height: 100%;
+        gap: 30px; /* Adjusted gap */
+    }
+
+    .project-section .title {
+        font-size: 20px;
+    }
+
+    .project-section .donate {
+        font-size: 12px;
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+
+    .project-section .icon {
+        width: 14px;
+        height: 14px;
+    }
+}
