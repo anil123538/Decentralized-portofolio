@@ -6,6 +6,7 @@ import './Wallet.css';
 const Wallet =({saveState})=>{
       const [connected,setConnected]=useState(true);
       const isAndroid = /android/i.test(navigator.userAgent);
+      const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
       const init =async()=>{
       try{
         const web3 = new Web3(window.ethereum);
@@ -24,7 +25,7 @@ const Wallet =({saveState})=>{
       return<>
       <div className="header">
       <h1>Welcome to My Portfolio</h1>
-      {isAndroid  && <button className="connectBTN">
+      {(isAndroid || isIOS) && <button className="connectBTN">
        
          <a href="https://metamask.app.link/dapp/anill.netlify.app/">Click For Mobile</a>
         </button>  } 
